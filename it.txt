@@ -1,0 +1,45 @@
+Drzewo binarne – drzewo, w którym stopień każdego wierzchołka jest nie większy od 3.
+
+Ukorzenione drzewo binarne to drzewo binarne, w którym wyróżniono jeden z wierzchołków (zwany korzeniem) stopnia najwyżej 2.
+
+W informatyce drzewo binarne to jeden z rodzajów drzewa (struktury danych), w którym liczba synów każdego wierzchołka wynosi nie więcej niż dwa. Wyróżnia się wtedy lewego syna i prawego syna danego wierzchołka.
+
+Drzewo binarne, w którym liczba synów każdego wierzchołka wynosi albo zero albo dwa, nazywane jest drzewem regularnym. Przykładem takich drzew są drzewa Huffmana.
+
+Szczególnymi odmianami drzew binarnych są drzewa BST, drzewa BSP oraz kopce binarne. 
+
+Kopiec binarny (ang. binary heap, czasem używa się też określenia sterta) – tablicowa struktura danych reprezentująca drzewo binarne, którego wszystkie poziomy z wyjątkiem ostatniego muszą być pełne. W przypadku, gdy ostatni poziom drzewa nie jest pełny, liście ułożone są od lewej do prawej strony drzewa. Wyróżniamy dwa rodzaje kopców binarnych: kopce binarne typu max w których wartość danego węzła niebędącego korzeniem jest zawsze mniejsza niż wartość jego rodzica oraz kopce binarne typu min w których wartość danego węzła niebędącego korzeniem jest zawsze większa niż wartość jego rodzica.
+
+Sortowanie – jeden z podstawowych problemów informatyki, polegający na uporządkowaniu zbioru danych względem pewnych cech charakterystycznych każdego elementu tego zbioru. Szczególnym przypadkiem jest sortowanie względem wartości każdego elementu, np. sortowanie liczb, słów itp.
+
+Algorytmy sortowania są stosowane w celu uporządkowania danych, umożliwienia stosowania wydajniejszych algorytmów (np. wyszukiwania) i prezentacji danych w sposób czytelniejszy dla człowieka.
+
+Jeśli jest konieczne posortowanie zbioru większego niż wielkość dostępnej pamięci, stosuje się algorytmy sortowania zewnętrznego.
+
+Algorytmy, do działania których nie jest potrzebna większa niż stała pamięć dodatkowa (elementy sortowane przechowywane są przez cały czas w tablicy wejściowej), nazywane są algorytmami działającymi w miejscu.
+
+Algorytmy sortujące, które dla elementów o tej samej wartości zachowują w tablicy końcowej kolejność tablicy wejściowej, nazywamy algorytmami stabilnymi.
+
+Sortowanie Shella (ang. Shellsort) – jeden z algorytmów sortowania działających w miejscu i korzystających z porównań elementów. Można go traktować jako uogólnienie sortowania przez wstawianie lub sortowania bąbelkowego, dopuszczające porównania i zamiany elementów położonych daleko od siebie. Na początku sortuje on elementy tablicy położone daleko od siebie, a następnie stopniowo zmniejsza odstępy między sortowanymi elementami. Dzięki temu może je przenieść w docelowe położenie szybciej niż zwykłe sortowanie przez wstawianie.
+
+Pierwszą wersję tego algorytmu, której zawdzięcza on swoją nazwę, opublikował w 1959 roku Donald Shell. Złożoność czasowa sortowania Shella w dużej mierze zależy od użytego w nim ciągu odstępów. Wyznaczenie jej dla wielu stosowanych w praktyce wariantów tego algorytmu pozostaje problemem otwartym. 
+
+Sortowanie przez wstawianie (ang. Insert Sort, Insertion Sort) – jeden z najprostszych algorytmów sortowania, którego zasada działania odzwierciedla sposób w jaki ludzie ustawiają karty – kolejne elementy wejściowe są ustawiane na odpowiednie miejsca docelowe. Jest efektywny dla niewielkiej liczby elementów, jego złożoność wynosi O(n2). Pomimo tego, że jest znacznie mniej wydajny od algorytmów takich jak quicksort czy heapsort, posiada pewne zalety:
+
+    liczba wykonanych porównań jest zależna od liczby inwersji w permutacji, dlatego algorytm jest wydajny dla danych wstępnie posortowanych,
+    jest wydajny dla zbiorów o niewielkiej liczebności,
+    jest stabilny.
+
+Istnieje modyfikacja algorytmu, pozwalająca zmniejszyć liczbę porównań. Zamiast za każdym razem iterować po już posortowanym fragmencie (etap wstawiania elementu), można posłużyć się wyszukiwaniem binarnym. Pozwala to zmniejszyć liczbę porównań do O(nlogn), nie zmienia się jednak złożoność algorytmu, ponieważ liczba przesunięć elementów to nadal O(n2).
+
+Wyszukiwanie binarne – algorytm opierający się na metodzie dziel i zwyciężaj, który w czasie logarytmicznym stwierdza, czy szukany element znajduje się w uporządkowanej tablicy i jeśli się znajduje, podaje jego indeks. Np. jeśli tablica zawiera milion elementów, wyszukiwanie binarne musi sprawdzić maksymalnie 20 elementów ( log 2 ⁡ 1 000 000 ≈ 20 ) w celu znalezienia żądanej wartości. Dla porównania wyszukiwanie liniowe wymaga w najgorszym przypadku przejrzenia wszystkich elementów tablicy. 
+
+Tablice mieszające opierają się na zwykłych tablicach indeksowanych liczbami – dostęp do danych jest bardzo szybki, nie zależy od rozmiaru tablicy ani położenia elementu (przynajmniej teoretycznie, patrz sekcja Wady). W tablicy mieszającej stosuje się funkcję mieszającą, która dla danego klucza wyznacza indeks w tablicy; innymi słowy przekształca klucz w liczbę z zadanego zakresu.
+
+Funkcje te są zwykle nieskomplikowane, tak aby czas ich wykonywania nie dominował w operacjach na tablicy.
+
+Funkcję mieszającą dobiera się do klucza; inaczej będzie zbudowana funkcja dla tablic przechowujących nazwiska (dowolnie długie łańcuchy znaków), inaczej dla współrzędnych (ciągi liczb rzeczywistych), inaczej dla numerów seryjnych (ciągi liczby i cyfry o określonej długości). Istnieją również funkcje uniwersalne, które można stosować dla dowolnych danych.
+
+W najprostszym przypadku wartość funkcji mieszającej, obliczona dla danego klucza, wyznacza dokładnie indeks szukanej informacji w tablicy. Jeżeli miejsce wskazywane przez obliczony indeks jest puste, to poszukiwanej informacji nie ma w tablicy. W ten sposób wyszukiwanie elementu ma złożoność czasową O ( 1 ) . {\displaystyle O(1).} {\displaystyle O(1).} Jednak w sytuacji tej pojawia się problem kolizji, to znaczy przypisania przez funkcję mieszającą tej samej wartości dwóm różnym kluczom.
+
+Jednak jeżeli dane, które mają być przechowywane w tablicy mieszającej, są znane zawczasu (np. nazwy państw, miast, słowa kluczowe jakiegoś języka programowania), można posłużyć się doskonałą funkcją mieszającą albo minimalną doskonałą funkcją mieszającą, które nigdy nie spowodują kolizji. Doskonała funkcja mieszająca odwzorowuje n {\displaystyle n} n kluczy na różne wartości z przedziału [ 0 , m − 1 ], gdzie m ⩾ n ; w przypadku funkcji minimalnych zachodzi równość m = n . 
