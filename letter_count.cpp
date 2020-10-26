@@ -46,10 +46,10 @@ void fun(string filename)
     output_name.append(filename);
     result.open(output_name);
     for (std::map<char, double>::iterator it = counter.begin(); it != counter.end(); ++it)
-		result << it->first << " => " << it->second << '\n';
+		result << it->first << ";" << it->second << '\n';
     result <<"Entropy"<< '\n';
     for (std::map<char, double>::iterator it = entropy.begin(); it != entropy.end(); ++it)
-		result << it->first << " => " << it->second << '\n';
+		result << it->first << ";" << it->second << '\n';
     result.close();
 }
 
